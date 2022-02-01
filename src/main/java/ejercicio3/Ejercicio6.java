@@ -5,6 +5,7 @@
 package ejercicio3;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  *
@@ -29,13 +30,14 @@ public class Ejercicio6 {
     }
 
     public static boolean compararArrays(int[] a, int[] b) {
-        for (int i = 0; i < b.length; i++) {
-            if (a[i] == b[i]) {
-                return true;
+        if (a.length == b.length) {
+            for (int i = 0; i < b.length; i++) {
+                if (a[i] != b[i]) {
+                    return false;
+                }
             }
+            return true;
         }
         return false;
     }
 }
-
-
