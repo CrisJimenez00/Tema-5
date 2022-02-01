@@ -17,27 +17,62 @@ public class EjercicioMoneda {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int tiradas;
-        String resultado;
-        int tiradaCara = 0, tiradaCruz = 0;
-        Random random = new Random();
-        Scanner teclado = new Scanner(System.in);
-        System.out.println("¿Cuántas tiradas quiere hacer?");
-        tiradas = teclado.nextInt();
-        
-        for (int i = 0; i < tiradas; i++) {
-            int posisbilidadTirada = random.nextInt(2) + 1;
-            if (posisbilidadTirada == 1) {
-                resultado = "Cara";
-                tiradaCara++;
-            } else {
-                resultado = "Cruz";
-                tiradaCruz++;
-            }
-            System.out.println("La tirada " + (i + 1) + " ha salido: " + resultado);
+        EjercicioMoneda monedas = new EjercicioMoneda(500);
 
+        monedas.llenarArray();
+        System.out.println("Hay " + monedas.caras() + " caras y " + monedas.cruces() + " cruces.");
+        monedas.imprimir();
+    }
+
+    private boolean[] moneda;
+    private int lanzamientos;
+
+    public EjercicioMoneda(int lanzamientos) {
+        this.lanzamientos = lanzamientos;
+        this.moneda = new boolean[lanzamientos];
+    }
+
+    public static boolean lanzar() {
+        Random rd = new Random();
+        return rd.nextBoolean();
+    }
+
+    public void llenarArray() {
+        for (int i = 0; i < moneda.length; i++) {
+            this.moneda[i] = lanzar();
         }
-        System.out.println("Han salido " + tiradaCara + " veces cara" + "y ha salido " + tiradaCruz + " veces cruz");
+    }
+
+    public int caras() {
+        int contador = 0;
+        for (int i = 0; i < moneda.length; i++) {
+            if (this.moneda[i]) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+
+    public int cruces() {
+        int contador = 0;
+        for (int i = 0; i < moneda.length; i++) {
+            if (!this.moneda[i]) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+
+    public void imprimir() {
+        System.out.println("");
+        for (int i = 0; i < moneda.length; i++) {
+            System.out.print("Lanzamiento " + (i + 1) + ": ");
+            if (this.moneda[i]) {
+                System.out.println("cara");
+            } else {
+                System.out.println("cruz");
+            }
+        }
     }
 
 }
