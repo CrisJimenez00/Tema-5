@@ -24,6 +24,7 @@ public class EjercicioMoneda {
         Scanner teclado = new Scanner(System.in);
         System.out.println("¿Cuántas tiradas quiere hacer?");
         tiradas = teclado.nextInt();
+        
         for (int i = 0; i < tiradas; i++) {
             int posisbilidadTirada = random.nextInt(2) + 1;
             if (posisbilidadTirada == 1) {
