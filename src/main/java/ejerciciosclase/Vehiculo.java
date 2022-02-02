@@ -19,9 +19,9 @@ public class Vehiculo {
     private double tarifa;
     private boolean disponible;
     private Random random;
-    private String[] colorcillo = {"Blanco", "Negro", "Azul", "Rojo", "Amarillo", "Dorado", "Morado", "Naranja"};
-    private String[] marquita = {"Peugeot", "Seat", "Ferrari", "Volkswagen", "Range Rover", "Renault", "Citroen", "Audi"};
-    private String[] modeloito = {"Clio", "Golf", "A3", "Ibiza", "Leon", "C3", "Focus", "Fiesta"};
+    private static String[] colorcillo = {"Blanco", "Negro", "Azul", "Rojo", "Amarillo", "Dorado", "Morado", "Naranja"};
+    private static String[] marquita = {"Peugeot", "Seat", "Ferrari", "Volkswagen", "Range Rover", "Renault", "Citroen", "Audi"};
+    private static String[] modeloito = {"Clio", "Golf", "A3", "Ibiza", "Leon", "C3", "Focus", "Fiesta"};
 
     // el método constructor de la clase Vehiculo 
     public Vehiculo(String matricula,
@@ -35,11 +35,14 @@ public class Vehiculo {
     }
 
     public Vehiculo() {
+        random = new Random();
         this.matricula = "0001 ASD";
         int posiMarca = random.nextInt(marquita.length);
-        this.marca = marquita[0];
-        this.modelo = modeloito[0];
-        this.color = colorcillo[0];
+        int posiModelo = random.nextInt(modeloito.length);
+        int posiColor = random.nextInt(colorcillo.length);
+        this.marca = marquita[posiMarca];
+        this.modelo = modeloito[posiModelo];
+        this.color = colorcillo[posiColor];
         this.tarifa = 40.8;
         this.disponible = false;
 

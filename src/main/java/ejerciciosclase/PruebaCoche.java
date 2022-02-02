@@ -4,6 +4,8 @@
  */
 package ejerciciosclase;
 
+import java.util.Arrays;
+
 /**
  *
  * @author cristina
@@ -14,8 +16,13 @@ public class PruebaCoche {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Vehiculo vehiculo = new Vehiculo();
-        System.out.println(vehiculo.toString());
+        Vehiculo[] lista = new Vehiculo[100];
+        for (int i = 0; i < 100; i++) {
+            Vehiculo vehiculo = new Vehiculo();
+            lista[i] = vehiculo;
+        }
+
+        System.out.println(Arrays.toString(lista));
     }
-    
+
 }
