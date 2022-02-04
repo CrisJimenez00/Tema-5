@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Ejercicio13 {
 
     private static void mostrarAsteriscos(int numero, int contador) {
-        System.out.print(numero+": ");
+        System.out.print(numero + ": ");
         for (int i = 0; i < contador; i++) {
             System.out.print("*");
         }
@@ -25,11 +25,13 @@ public class Ejercicio13 {
         boolean fin = true;
         Scanner teclado = new Scanner(System.in);
         ArrayList<Integer> lista = new ArrayList();
+
         int contador1 = 0, contador2 = 0, contador3 = 0, contador4 = 0,
                 contador5 = 0, contador6 = 0, contador7 = 0, contador8 = 0,
                 contador9 = 0, contador10 = 0, contador11 = 0, contador12 = 0,
                 contador13 = 0, contador14 = 0, contador15 = 0, contador16 = 0,
                 contador17 = 0, contador18 = 0, contador19 = 0, contador20 = 0;
+
         do {
             System.out.println("Introduzca el número que desee");
             int numero = teclado.nextInt();

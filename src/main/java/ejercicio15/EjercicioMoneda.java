@@ -5,24 +5,12 @@
 package ejercicio15;
 
 import java.util.Random;
-import java.util.Scanner;
 
 /**
  *
  * @author cristina
  */
 public class EjercicioMoneda {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        EjercicioMoneda monedas = new EjercicioMoneda(500);
-
-        monedas.llenarArray();
-        System.out.println("Hay " + monedas.caras() + " caras y " + monedas.cruces() + " cruces.");
-        monedas.imprimir();
-    }
 
     private boolean[] moneda;
     private int lanzamientos;
@@ -73,6 +61,17 @@ public class EjercicioMoneda {
                 System.out.println("cruz");
             }
         }
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        EjercicioMoneda monedas = new EjercicioMoneda(1000);
+
+        monedas.llenarArray();
+        System.out.println("Hay " + monedas.caras() + " caras y " + monedas.cruces() + " cruces");
+        monedas.imprimir();
     }
 
 }
