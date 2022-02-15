@@ -14,7 +14,7 @@ public class PruebaPila {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Pista lista = new Pista();
+        Pista lista = new Pista(3);
         lista.push('3');
         lista.push('4');
         lista.push('8');
