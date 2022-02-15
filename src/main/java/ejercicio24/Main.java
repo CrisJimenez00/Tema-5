@@ -11,6 +11,7 @@ package ejercicio24;
 public class Main {
     public static void main(String[] args) {
         ListaReproduccion lista = new ListaReproduccion();
+        lista.grabarCancion(new Cancion());
         
     }
     

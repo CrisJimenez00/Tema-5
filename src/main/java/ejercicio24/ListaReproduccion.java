@@ -5,6 +5,7 @@
 package ejercicio24;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -67,6 +68,23 @@ public class ListaReproduccion {
     //busca la canción c en la lista de reproducción y devuelve la posición en la que se encuentra. Usa el método indexOf.
     public int buscarCancion(Cancion c) {
         return canciones.lastIndexOf(c);
+    }
+
+    // Collections.sort(lista) lista debe contener objetos que implementan
+    // comparable
+    public void ordenarISBN() {
+        Collections.sort(this.canciones);
+    }
+
+    // Búsqueda binaria de un objeto según la ordenación natural
+    // binarySearch no funciona si la lista está desordenada
+    public int buscarISBN(Cancion c) {
+
+        return Collections.binarySearch(canciones, c);
+    }
+
+    public void ordenarComparatorNombre() {
+        Collections.sort(canciones, (Cancion l1, Cancion l2) -> l1.getNombreAlbum().compareTo(l2.getNombreAlbum()));
     }
 
 }

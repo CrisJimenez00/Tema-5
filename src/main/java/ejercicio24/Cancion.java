@@ -10,7 +10,7 @@ import java.util.Objects;
  *
  * @author cristina
  */
-public class Cancion {
+public class Cancion implements Comparable<Cancion> {
 
     //Atributos encapsulados
     private String nombreAlbum;
@@ -115,6 +115,12 @@ public class Cancion {
 //            return false;
 //        }
         return Objects.equals(this.nombreAlbum, other.nombreAlbum);
+    }
+
+    @Override
+    public int compareTo(Cancion c) {
+        return this.nombreAlbum.compareTo(c.nombreAlbum);
+
     }
 
 }
