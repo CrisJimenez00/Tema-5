@@ -13,10 +13,7 @@ public class Avion {
     public static void main(String[] args) {
         ConstructorAvion avion = new ConstructorAvion();
         
-        //Siempre se inician los asientos en false
-        avion.llenarAsientos();
-        System.out.println("Asientos en el comienzo---------");
-        avion.mostrarAvion();
+        avion.menu();
 
     }
 
