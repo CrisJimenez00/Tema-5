@@ -18,12 +18,14 @@ public class Ejercicio12 {
     public static void main(String[] args) {
         Random random = new Random();
         int[][] matriz = new int[2][3];
+        
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
                 matriz[i][j] = random.nextInt(10) + 1;
             }
 
         }
+        
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
                 System.out.print(matriz[i][j]);

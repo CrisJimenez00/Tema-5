@@ -12,7 +12,7 @@ public class Avion {
 
     public static void main(String[] args) {
         ConstructorAvion avion = new ConstructorAvion();
-        
+
         avion.menu();
 
     }

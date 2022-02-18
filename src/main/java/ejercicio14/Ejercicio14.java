@@ -27,18 +27,17 @@ public class Ejercicio14 {
                 matriz[i][j] = random.nextInt(100) + 1;
             }
         }
+        
         int min = 100, max = 0;
         //Mostramos por pantalla
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
                 //Para el mayor y el menor
-                if (min < matriz[i][j]) {
+                if (matriz[i][j] <= min) {
                     min = matriz[i][j];
-                    System.out.println("ay");
                 }
-                if (max > matriz[i][j]) {
+                if (matriz[i][j] >= max) {
                     max = matriz[i][j];
-                    System.out.println("po");
                 }
                 //para mostrar
                 System.out.print(matriz[i][j]);
@@ -46,8 +45,7 @@ public class Ejercicio14 {
                 //Para la media
                 cantidad++;
                 suma += matriz[i][j];
-                
-                
+
             }
             System.out.println();
         }
